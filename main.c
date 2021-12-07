@@ -49,12 +49,12 @@
 #include "tusb.h"
 
 #define SOUTH_BUTTON_PIN 2
-#define WEST_BUTTON_PIN 3
+#define WEST_BUTTON_PIN 1
 #define NORTH_BUTTON_PIN 0
-#define EAST_BUTTON_PIN 1
+#define EAST_BUTTON_PIN 3
 
-#define SELECT_BUTTON_PIN 10
-#define START_BUTTON_PIN 11
+#define SELECT_BUTTON_PIN 11
+#define START_BUTTON_PIN 10
 
 #define POWER_SWITCH_PIN 16
 
