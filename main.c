@@ -10,29 +10,26 @@
  * 
  * NOTE: The board must fit this description of it to work
  * 
- * 1. 2-way switch ()
- *   3v3->  1k resistor -> pin 2 on switch
- *   pin 1 on switch -> led (to indicate its on) -> ground
- *   pin 3 on switch -> gpio 16 (as input) (to indicate its off) -> // how does this goto ground
+ * 1.  3v3->  1k resistor ->  led (to indicate its on) -> ground
  * 2. 4 face buttons (a, b, x, y || south, east, west, north)
  *    for these i suggest bigger buttons colours ones are also fun!
  *   GAMEPAD_BUTTON_SOUTH
- *      3v3 ->  1k resistor -> button -> gpio0
+ *      3v3 ->  220b resistor -> button -> gpio0
  *  GAMEPAD_BUTTON_WEST
- *      3v3 ->  1k resistor -> button -> gpio1
+ *      3v3 ->  220b resistor -> button -> gpio1
  *  GAMEPAD_BUTTON_NORTH
- *      3v3 ->  1k resistor -> button -> gpio2
+ *      3v3 ->  220b resistor -> button -> gpio2
  *  GAMEPAD_BUTTON_EAST
- *      3v3 ->  1k resistor -> button -> gpio3
+ *      3v3 ->  220b resistor -> button -> gpio3
  * 
  * 3. select and start buttons
  *   I suggest smaller buttons for these as you dont want to take up a lot of space
  *   GAMEPAD_BUTTON_SELECT ->
- *      3v3 -> 1k -> button -> gpio10
+ *      3v3 -> 220b -> button -> gpio10
  *   GAMEPAD_BUTTON_START ->
- *      3v3 -> 1k -> button -> gpio11
- * 4. joystick (only 1 for now maybe ill do 2 on a second attempt)
- *  TODO not sure how this works yet
+ *      3v3 -> 220b -> button -> gpio11
+ * 4. DPAD (only 1 for now maybe ill do 2 on a second attempt)
+ *   same as buttons 
  **/ 
 
 
@@ -51,15 +48,21 @@
 #include "bsp/board.h"
 #include "tusb.h"
 
-#define SOUTH_BUTTON_PIN 0
-#define WEST_BUTTON_PIN 1
-#define NORTH_BUTTON_PIN 2
-#define EAST_BUTTON_PIN 3
+#define SOUTH_BUTTON_PIN 2
+#define WEST_BUTTON_PIN 3
+#define NORTH_BUTTON_PIN 0
+#define EAST_BUTTON_PIN 1
 
 #define SELECT_BUTTON_PIN 10
 #define START_BUTTON_PIN 11
 
 #define POWER_SWITCH_PIN 16
+
+#define D_PAD_UP_PIN 22
+#define D_PAD_DOWN_PIN 19
+#define D_PAD_LEFT_PIN 20
+#define D_PAD_RIGHT_PIN 20
+
 
 //todo remove
 static void send_hid_report(uint8_t report_id, uint32_t btn);
@@ -85,17 +88,23 @@ void tud_mount_cb() {
   gpio_init(WEST_BUTTON_PIN);
   gpio_init(NORTH_BUTTON_PIN);
   gpio_init(EAST_BUTTON_PIN);
+  gpio_init(D_PAD_UP_PIN);
+  gpio_init(D_PAD_DOWN_PIN);
+  gpio_init(D_PAD_LEFT_PIN);
+  gpio_init(D_PAD_RIGHT_PIN);
   gpio_init(SELECT_BUTTON_PIN);
   gpio_init(START_BUTTON_PIN);
   gpio_init(POWER_SWITCH_PIN);
 
-  adc_gpio_init(26);
-  adc_gpio_init(27);
   
   gpio_set_dir(SOUTH_BUTTON_PIN, GPIO_IN);
   gpio_set_dir(WEST_BUTTON_PIN, GPIO_IN);
   gpio_set_dir(NORTH_BUTTON_PIN, GPIO_IN);
   gpio_set_dir(EAST_BUTTON_PIN, GPIO_IN);
+  gpio_set_dir(D_PAD_UP_PIN, GPIO_IN);
+  gpio_set_dir(D_PAD_DOWN_PIN, GPIO_IN);
+  gpio_set_dir(D_PAD_LEFT_PIN, GPIO_IN);
+  gpio_set_dir(D_PAD_RIGHT_PIN, GPIO_IN);
   gpio_set_dir(SELECT_BUTTON_PIN, GPIO_IN);
   gpio_set_dir(START_BUTTON_PIN, GPIO_IN);
   gpio_set_dir(POWER_SWITCH_PIN, GPIO_IN);
@@ -143,8 +152,6 @@ void hid_task() {
 
     static bool has_gamepad_key = false;
 
-    static uint joy_x = 0;
-    static uint joy_y = 0;
 
     hid_gamepad_report_t report =
     {
@@ -188,14 +195,33 @@ void hid_task() {
 
     }
 
-    adc_select_input(0);
-    report.x = adc_read()-64;
-    adc_select_input(1);
-    report.y = adc_read()-64;
-    
-    
-    if(report.buttons == 0 && has_gamepad_key) {
+    int up_value = gpio_get(D_PAD_UP_PIN);
+    int down_value = gpio_get(D_PAD_DOWN_PIN);
+    int left_value = gpio_get(D_PAD_LEFT_PIN);
+    int right_value = gpio_get(D_PAD_RIGHT_PIN);
+
+    // get d-pad
+    if (up_value == 1 && left_value == 1) {
+      report.hat = GAMEPAD_HAT_UP_LEFT;
+    } else if (up_value == 1 && right_value == 1) {
+      report.hat = GAMEPAD_HAT_UP_RIGHT;
+    } else if (up_value == 1) {
+      report.hat = GAMEPAD_HAT_UP;
+    } else if (down_value == 1 && left_value == 1) {
+      report.hat = GAMEPAD_HAT_DOWN_LEFT;
+    } else if (down_value == 1 && right_value == 1) {
+      report.hat = GAMEPAD_HAT_DOWN_RIGHT;
+    } else if ( down_value == 1 ) {
+      report.hat = GAMEPAD_HAT_DOWN;
+    } else if (left_value == 1) {
+      report.hat = GAMEPAD_HAT_LEFT;
+    } else if ( right_value == 1) {
+      report.hat = GAMEPAD_HAT_RIGHT;
+    } else {
       report.hat = GAMEPAD_HAT_CENTERED;
+    }
+    
+    if(report.buttons == 0 && has_gamepad_key && report.hat == GAMEPAD_HAT_CENTERED) {
       tud_hid_report(REPORT_ID_GAMEPAD, &report, sizeof(report));
       has_gamepad_key = false;
     } else {
@@ -204,10 +230,6 @@ void hid_task() {
   
   }
   
-  
-
-
-
 
 }
 
