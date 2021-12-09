@@ -61,7 +61,7 @@
 #define D_PAD_UP_PIN 22
 #define D_PAD_DOWN_PIN 19
 #define D_PAD_LEFT_PIN 20
-#define D_PAD_RIGHT_PIN 20
+#define D_PAD_RIGHT_PIN 21
 
 
 //todo remove
