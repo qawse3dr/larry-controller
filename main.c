@@ -48,9 +48,10 @@
 #include "bsp/board.h"
 #include "tusb.h"
 
+/** Larrys Controller
 #define SOUTH_BUTTON_PIN 2
-#define WEST_BUTTON_PIN 1
-#define NORTH_BUTTON_PIN 0
+#define WEST_BUTTON_PIN 5
+#define NORTH_BUTTON_PIN 4
 #define EAST_BUTTON_PIN 3
 
 #define SELECT_BUTTON_PIN 11
@@ -62,6 +63,23 @@
 #define D_PAD_DOWN_PIN 19
 #define D_PAD_LEFT_PIN 20
 #define D_PAD_RIGHT_PIN 21
+*/
+
+/** Hunters Controller */
+#define SOUTH_BUTTON_PIN 11
+#define WEST_BUTTON_PIN 4
+#define NORTH_BUTTON_PIN 5
+#define EAST_BUTTON_PIN 12
+
+#define SELECT_BUTTON_PIN 21
+#define START_BUTTON_PIN 13
+
+#define POWER_SWITCH_PIN 16
+
+#define D_PAD_UP_PIN 22
+#define D_PAD_DOWN_PIN 19
+#define D_PAD_LEFT_PIN 18
+#define D_PAD_RIGHT_PIN 20
 
 
 //todo remove

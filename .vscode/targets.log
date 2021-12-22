@@ -1,0 +1,313 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+ 
+# GNU Make 4.3
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Wed Dec 22 16:56:52 2021
+
+# Variables
+
+# environment
+GDK_BACKEND = x11
+# environment
+LC_ALL = C
+# environment
+NO_AT_BRIDGE = 1
+# environment
+GJS_DEBUG_OUTPUT = stderr
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d5dd1511-059e-47df-bb03-f2fa1182f3b3.sock
+# environment
+LC_NAME = en_CA.UTF-8
+# environment
+LC_NUMERIC = en_CA.UTF-8
+# environment
+VSCODE_CWD = /home/larry
+# environment
+WINDOWPATH = 2
+# environment
+UBUNTU_MENUPROXY = 1
+# environment
+LC_ADDRESS = en_CA.UTF-8
+# environment
+GDM_LANG = en_CA.UTF-8
+# default
+MAKE_COMMAND := make
+# environment
+GTK3_MODULES = xapp-gtk3-module
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+.VARIABLES := 
+# environment
+PWD = /home/larry/Programming/raspberrypi/pico/controller
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+MAIL = /var/spool/mail/larry
+# environment
+XDG_DATA_DIRS = /home/larry/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+VSCODE_LOG_STACK = false
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_CODE_CACHE_PATH = /home/larry/.config/Code - OSS/CachedData/b3318bc0524af3d74034b8bb8a64df0ccf35549a
+# environment
+LANG = C
+# environment
+XAUTHORITY = /run/user/1000/gdm/Xauthority
+# default
+.LOADED := 
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# makefile
+MAKEFLAGS = pqrR
+# makefile
+CURDIR := /home/larry/Programming/raspberrypi/pico/controller
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+MFLAGS = -pqrR
+# environment
+SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
+# default
+.SHELLFLAGS := -c
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+XDG_SESSION_DESKTOP = gnome
+# environment
+VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"Code - OSS","submitURL":"","uploadToServer":false}
+# makefile
+MAKEFILE_LIST := 
+# automatic
+@F = $(notdir $@)
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+VSCODE_PID = 3168
+# environment
+MOZ_ENABLE_WAYLAND = 1
+# environment
+XDG_SESSION_TYPE = x11
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+SESSION_MANAGER = local/larry-laptop:@/tmp/.ICE-unix/1542,unix/larry-laptop:/tmp/.ICE-unix/1542
+# automatic
+*F = $(notdir $*)
+# environment
+QT_QPA_PLATFORMTHEME = qt5ct
+# environment
+CHROME_DESKTOP = code-oss.desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-gb","availableLanguages":{},"_languagePackSupport":true}
+# environment
+BREAKPAD_DUMP_LOCATION = /home/larry/.config/Code - OSS/exthost Crash Reports
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# makefile
+SHELL = /bin/sh
+# default
+MAKECMDGOALS := all
+# environment
+XMODIFIERS = @im=ibus
+# environment
+DOTNET_BUNDLE_EXTRACT_BASE_DIR = /home/larry/.cache/dotnet_bundle_extract
+# environment
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
+# environment
+SHLVL = 0
+# environment
+PICO_SDK_PATH = /usr/share/pico-sdk
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+PATH = /home/larry/.local/bin:/usr/local/bin:/usr/bin:/var/lib/snapd/snap/bin:/usr/local/sbin:/home/larry/.dotnet/tools:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+# default
+MAKEFILES := 
+# environment
+LC_MONETARY = en_CA.UTF-8
+# environment
+MOTD_SHOWN = pam
+# automatic
+^F = $(notdir $^)
+# environment
+LC_TIME = en_CA.UTF-8
+# environment
+INVOCATION_ID = 615f1315c07f445b88eb16eeadc7c040
+# environment
+VSCODE_LOG_NATIVE = false
+# environment
+USERNAME = larry
+# environment
+LC_TELEPHONE = en_CA.UTF-8
+# automatic
+?F = $(notdir $?)
+# environment
+XDG_CURRENT_DESKTOP = GNOME
+# automatic
++F = $(notdir $+)
+# environment
+DESKTOP_SESSION = gnome
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = GNOME
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+LOGNAME = larry
+# environment
+GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code-oss.desktop
+# makefile
+.DEFAULT_GOAL := 
+# environment
+SYSTEMD_EXEC_PID = 1559
+# environment
+EDITOR = /usr/bin/nano
+# environment
+DISPLAY = :1
+# environment
+GTK_MODULES = appmenu-gtk-module
+# environment
+USER = larry
+# default
+MAKE_VERSION := 4.3
+# environment
+MANAGERPID = 1466
+# environment
+LC_MEASUREMENT = en_CA.UTF-8
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 3154
+# environment
+_ = /usr/bin/make
+# environment
+LC_PAPER = en_CA.UTF-8
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# environment
+JOURNAL_STREAM = 8:24348
+# environment
+XDG_SESSION_CLASS = user
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
+# environment
+HOME = /home/larry
+# environment
+QT_IM_MODULE = ibus
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+VSCODE_IPC_HOOK = /run/user/1000/vscode-4db6afdb-1.62.0-main.sock
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# default
+SUFFIXES := 
+# environment
+QT_AUTO_SCREEN_SCALE_FACTOR = 1
+# environment
+VSCODE_CLI = 1
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink guile load
+# environment
+XDG_MENU_PREFIX = gnome-
+# environment
+DOTNET_ROOT = /usr/share/dotnet
+# environment
+GDMSESSION = gnome
+# environment
+LC_IDENTIFICATION = en_CA.UTF-8
+# variable set hash-table stats:
+# Load=114/1024=11%, Rehash=0, Collisions=7/141=5%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 66306, inode 1446461): 12 files, no impossibilities.
+
+# 12 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+all:
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+ 
+makefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+
+# Not a target:
+GNUmakefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+
+# files hash-table stats:
+# Load=6/1024=1%, Rehash=0, Collisions=0/15=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 20 / storage = 214 B / avg = 10 B
+# current buf: size = 8162 B / used = 214 B / count = 20 / avg = 10 B
+
+# strcache performance: lookups = 23 / hit rate = 13%
+# hash-table stats:
+# Load=20/8192=0%, Rehash=0, Collisions=0/23=0%
+# Finished Make data base on Wed Dec 22 16:56:52 2021
+
+ 
